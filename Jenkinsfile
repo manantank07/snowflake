@@ -1,5 +1,5 @@
 pipeline {
-    agent {
+    agent any {
     docker {
             image "python:3.8"
             args '--user 0:0'
