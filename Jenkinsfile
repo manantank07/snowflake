@@ -1,8 +1,9 @@
 pipeline {
-    agent any{
-    docker{
+    agent {
+    docker {
             image "python:3.8"
             args '--user 0:0'
+        }
     }
     stages {
         stage('Run Schemachange') {
@@ -15,6 +16,5 @@ pipeline {
                 }
             }
         }
-    }
     }
 }
