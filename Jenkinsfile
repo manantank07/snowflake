@@ -6,6 +6,7 @@ pipeline {
             steps {
                 script {
                     sh '''
+                    sh 'which wget' 
                     sh 'wget https://github.com/snowflakedb/schemachange/releases/download/v0.12.3/schemachange_0.12.3_linux_amd64.tar.gz'
                     sh 'tar -xvf schemachange_0.12.3_linux_amd64.tar.gz'
                     sh 'mv schemachange /usr/local/bin/'
