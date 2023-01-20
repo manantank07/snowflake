@@ -17,7 +17,9 @@ pipeline {
         stage('Run Schemachange') {
             steps {
                 script {
-                    sh "pip3 install schemachange — upgrade"
+                    sh "sudo apt-get remove python3-pip"
+                    sh "sudo apt-get install python3-pip"
+                    sh "python3 -m pip3 install schemachange — upgrade"
                     sh "schemachange -f migrations -a ${SF_ACCOUNT} -u {SF_USERNAME} -r {SF_ROLE} -w ${SF_WAREHOUSE} -d ${SF_DATABASE} -c ${SF_DATABASE}.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table"
                 }
             }
