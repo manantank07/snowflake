@@ -18,8 +18,8 @@ pipeline {
             steps {
                 script {
                     sh "pip install schemachange"
-                    sh "schemachange --version"
-                    sh "schemachange -f migrations -a ${SF_ACCOUNT} -u ${SF_USERNAME} -r ${SF_ROLE} -w ${SF_WAREHOUSE} -d ${SF_DATABASE} -c ${SF_DATABASE}.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table"
+                    // sh "schemachange --version"
+                    sh '/usr/bin/python3 -m schemachange -f migrations -a ${SF_ACCOUNT} -u ${SF_USERNAME} -r ${SF_ROLE} -w ${SF_WAREHOUSE} -d ${SF_DATABASE} -c ${SF_DATABASE}.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table'
                 }
             }
         }
