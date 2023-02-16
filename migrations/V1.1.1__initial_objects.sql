@@ -1,6 +1,2 @@
-CREATE SCHEMA DEMO;
-CREATE TABLE HELLO_WORLD
-(
-    FIRST NAME VARCHAR
-    ,LAST NAME VARCHAR
-);
+create schema demo;
+create table persons(first_name string, last_name string);
